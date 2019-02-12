@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimalManager.cs" />
+    <Compile Include="Animals\Animal.cs" />
+    <Compile Include="Animals\Bird.cs" />
+    <Compile Include="Animals\Cat.cs" />
+    <Compile Include="Animals\Crow.cs" />
+    <Compile Include="Animals\Dog.cs" />
+    <Compile Include="Animals\Mammal.cs" />
+    <Compile Include="Animals\Swan.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
