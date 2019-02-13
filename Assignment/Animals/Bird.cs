@@ -1,6 +1,6 @@
 ﻿namespace Assignment.Animals
 {
-    public class Bird : Animal {
+    public abstract class Bird : Animal {
 
         public double wingSpanCm;
 

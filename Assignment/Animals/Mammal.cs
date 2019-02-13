@@ -1,6 +1,6 @@
 ﻿namespace Assignment.Animals
 {
-    public class Mammal : Animal {
+    public abstract class Mammal : Animal {
 
         public int teethCount;
 

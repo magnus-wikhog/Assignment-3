@@ -64,6 +64,7 @@
             this.age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.specialCharacteristics = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.addAnimalButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.birdInput.SuspendLayout();
@@ -83,8 +84,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -103,7 +102,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(613, 171);
+            this.groupBox1.Size = new System.Drawing.Size(612, 171);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Animal specification";
@@ -361,22 +360,22 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.animalsListView);
             this.groupBox2.Location = new System.Drawing.Point(12, 219);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox2.Size = new System.Drawing.Size(613, 190);
+            this.groupBox2.Size = new System.Drawing.Size(907, 208);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Animals";
             // 
             // animalsListView
             // 
-            this.animalsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.animalsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.animalsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.id,
@@ -388,7 +387,7 @@
             this.animalsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.animalsListView.Location = new System.Drawing.Point(10, 23);
             this.animalsListView.Name = "animalsListView";
-            this.animalsListView.Size = new System.Drawing.Size(593, 157);
+            this.animalsListView.Size = new System.Drawing.Size(887, 175);
             this.animalsListView.TabIndex = 0;
             this.animalsListView.UseCompatibleStateImageBehavior = false;
             this.animalsListView.View = System.Windows.Forms.View.Details;
@@ -422,23 +421,35 @@
             this.specialCharacteristics.Text = "Special characteristics";
             this.specialCharacteristics.Width = 539;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Location = new System.Drawing.Point(631, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(288, 171);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Feeding schedule";
+            // 
             // addAnimalButton
             // 
-            this.addAnimalButton.Location = new System.Drawing.Point(262, 190);
+            this.addAnimalButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addAnimalButton.Location = new System.Drawing.Point(407, 193);
             this.addAnimalButton.Name = "addAnimalButton";
-            this.addAnimalButton.Size = new System.Drawing.Size(115, 23);
-            this.addAnimalButton.TabIndex = 1;
+            this.addAnimalButton.Size = new System.Drawing.Size(114, 23);
+            this.addAnimalButton.TabIndex = 4;
             this.addAnimalButton.Text = "Add animal";
             this.addAnimalButton.UseVisualStyleBackColor = true;
-            this.addAnimalButton.Click += new System.EventHandler(this.addAnimalButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 416);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(930, 434);
             this.Controls.Add(this.addAnimalButton);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -508,6 +519,7 @@
         private System.Windows.Forms.ColumnHeader age;
         private System.Windows.Forms.ColumnHeader gender;
         private System.Windows.Forms.ColumnHeader specialCharacteristics;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button addAnimalButton;
     }
 }
