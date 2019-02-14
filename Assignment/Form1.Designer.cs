@@ -65,7 +65,9 @@
             this.gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.specialCharacteristics = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.eaterTypeTextBox = new System.Windows.Forms.TextBox();
             this.addAnimalButton = new System.Windows.Forms.Button();
+            this.feedingScheduleTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.birdInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.birdWingSpanUpDown)).BeginInit();
@@ -80,6 +82,7 @@
             this.crowInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crowWeightUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -384,6 +387,7 @@
             this.age,
             this.gender,
             this.specialCharacteristics});
+            this.animalsListView.FullRowSelect = true;
             this.animalsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.animalsListView.Location = new System.Drawing.Point(10, 23);
             this.animalsListView.Name = "animalsListView";
@@ -391,6 +395,7 @@
             this.animalsListView.TabIndex = 0;
             this.animalsListView.UseCompatibleStateImageBehavior = false;
             this.animalsListView.View = System.Windows.Forms.View.Details;
+            this.animalsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.animalsListView_ItemSelectionChanged);
             // 
             // id
             // 
@@ -425,12 +430,24 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.feedingScheduleTextBox);
+            this.groupBox3.Controls.Add(this.eaterTypeTextBox);
             this.groupBox3.Location = new System.Drawing.Point(631, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(288, 171);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Feeding schedule";
+            // 
+            // eaterTypeTextBox
+            // 
+            this.eaterTypeTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.eaterTypeTextBox.Enabled = false;
+            this.eaterTypeTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.eaterTypeTextBox.Location = new System.Drawing.Point(6, 20);
+            this.eaterTypeTextBox.Name = "eaterTypeTextBox";
+            this.eaterTypeTextBox.Size = new System.Drawing.Size(276, 20);
+            this.eaterTypeTextBox.TabIndex = 0;
             // 
             // addAnimalButton
             // 
@@ -441,6 +458,18 @@
             this.addAnimalButton.TabIndex = 4;
             this.addAnimalButton.Text = "Add animal";
             this.addAnimalButton.UseVisualStyleBackColor = true;
+            this.addAnimalButton.Click += new System.EventHandler(this.addAnimalButton_Click);
+            // 
+            // feedingScheduleTextBox
+            // 
+            this.feedingScheduleTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.feedingScheduleTextBox.Enabled = false;
+            this.feedingScheduleTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.feedingScheduleTextBox.Location = new System.Drawing.Point(6, 46);
+            this.feedingScheduleTextBox.Multiline = true;
+            this.feedingScheduleTextBox.Name = "feedingScheduleTextBox";
+            this.feedingScheduleTextBox.Size = new System.Drawing.Size(276, 118);
+            this.feedingScheduleTextBox.TabIndex = 1;
             // 
             // Form1
             // 
@@ -477,6 +506,8 @@
             this.crowInput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crowWeightUpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -521,6 +552,8 @@
         private System.Windows.Forms.ColumnHeader specialCharacteristics;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button addAnimalButton;
+        private System.Windows.Forms.TextBox eaterTypeTextBox;
+        private System.Windows.Forms.TextBox feedingScheduleTextBox;
     }
 }
 

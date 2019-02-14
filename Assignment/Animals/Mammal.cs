@@ -5,7 +5,7 @@
         public int teethCount;
 
 
-        public Mammal(int teethCount) {
+        public Mammal(string id, int teethCount) : base(id) {
             this.teethCount = teethCount;
         }
 

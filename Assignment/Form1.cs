@@ -100,23 +100,36 @@ namespace Assignment
          */
         private void addAnimalButton_Click(object sender, EventArgs e) {
             // Determine which type of animal to create, and use the correct UI elements to set it's properties
-            Animal animal;
-            switch (speciesListbox.Text) {
-                case "Cat": animal = new Cat((int)mammalTeethCountUpDown.Value, (double)catClawLengthUpDown.Value); break;
-                case "Dog": animal = new Dog((int)mammalTeethCountUpDown.Value, (double)dogTailLengthUpDown.Value); break;
-                case "Swan": animal = new Swan((double)birdWingSpanUpDown.Value, swanColorTextbox.Text); break;
-                case "Crow": animal = new Crow((double)birdWingSpanUpDown.Value, (double)crowWeightUpDown.Value); break;
-                default: return; // Don't add anything if it's an unknown species name
-            }
+            Animal animal = mAnimalManager.CreateAnimal(
+                speciesListbox.Text,
+                new Dictionary<String, Object>(){
+                    { "mammalTeethCount",       (int)mammalTeethCountUpDown.Value },
+                    { "catClawLength",          (double)catClawLengthUpDown.Value },
+                    { "dogTailLength",          (double)dogTailLengthUpDown.Value },
+                    { "birdWingSpan",           (double)birdWingSpanUpDown.Value },
+                    { "swanColor",              swanColorTextbox.Text },
+                    { "crowWeight",             (double)crowWeightUpDown.Value },
+                }
+            );
 
             // Set common animal properties
-            animal.name = animalNameTextbox.Text;
+            animal.Name = animalNameTextbox.Text;
             animal.age = (int)animalAgeUpDown.Value;
-            animal.gender = animalGenderCombo.Text;
+            animal.Gender = animalGenderCombo.Text;
 
-            // Add the animal to the list and get a generated ID in return
-            string id = mAnimalManager.AddAnimal(animal);
-            animalsListView.Items.Add(new ListViewItem( new string[]{ id, animal.GetType().Name, animal.name, animal.age.ToString(), animal.gender, animal.GetSpecialCharacteristics() } ));
+            mAnimalManager.AddAnimal(animal);
+
+            // Add the animal to the list
+            animalsListView.Items.Add(new ListViewItem( new string[]{ animal.ID, animal.GetSpecies(), animal.Name, animal.age.ToString(), animal.Gender, animal.GetSpecialCharacteristics() } ));
+        }
+
+
+        private void animalsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e) {
+            Animal animal = mAnimalManager.GetAnimalWithId(e.Item.SubItems[0].Text);
+            if( null != animal) {
+                eaterTypeTextBox.Text = animal.GetEaterType().ToString();
+                feedingScheduleTextBox.Text = animal.GetFoodSchedule().ToString();
+            }
         }
 
     }

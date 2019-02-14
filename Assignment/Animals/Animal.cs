@@ -7,21 +7,29 @@
      */
     public abstract class Animal : IAnimal{
 
-        // Properties common to all animals
-        public string name;
-        public string gender;
-        public int age;
-
-        public Animal(){
-        }
-
-        public abstract string ID { get; }
-        public abstract string Name { get; set; }
-        public abstract string Gender { get; set; }
-
+        // Abstract interface methods that need to be implemented by subclasses
         public abstract EaterType GetEaterType();
         public abstract FoodSchedule GetFoodSchedule();
         public abstract string GetSpecies();
+
+
+        // Public properties common to all animals
+        public string ID => id;
+        public string Name { get => name; set => name = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public int age;
+
+
+        protected string id;
+        protected string name;
+        protected string gender;
+
+
+
+        public Animal(string id){
+            this.id = id;
+        }
+
 
 
         /*

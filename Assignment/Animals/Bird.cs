@@ -5,9 +5,11 @@
         public double wingSpanCm;
 
 
-        public Bird(double wingSpanCm) {
+        public Bird(string id, double wingSpanCm) : base(id){
             this.wingSpanCm = wingSpanCm;
         }
+
+
 
 
 

@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace Assignment.Animals{
 
-    class FoodSchedule{
+    public class FoodSchedule{
         private List<string> foodDescriptionList;
 
 
         FoodSchedule() {
-
+            foodDescriptionList = new List<string>();
         }
 
 
-        FoodSchedule(List<String> foodList) {
-            foreach(string item in foodList) {
+        public FoodSchedule(List<string> foodList) {
+            foodDescriptionList = new List<string>();
+            foreach (string item in foodList) {
                 AddFoodScheduleItem(item);
             }
         }
