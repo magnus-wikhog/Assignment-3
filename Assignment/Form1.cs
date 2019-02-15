@@ -41,6 +41,7 @@ namespace Assignment
                 categoryListbox.Items.Add(category);
             }
             categoryListbox.SelectedIndex = 0;
+            animalGenderListView.SelectedIndex = 0;
         }
 
 
@@ -115,7 +116,7 @@ namespace Assignment
             // Set common animal properties
             animal.Name = animalNameTextbox.Text;
             animal.age = (int)animalAgeUpDown.Value;
-            animal.Gender = animalGenderCombo.Text;
+            animal.Gender = animalGenderListView.SelectedItem.ToString();
 
             mAnimalManager.AddAnimal(animal);
 
@@ -124,6 +125,20 @@ namespace Assignment
         }
 
 
+        /*
+         * Reloads all animals from the AnimalManager and displays them in the list.
+         */
+        private void DisplayAnimals() {
+            animalsListView.Items.Clear();
+            foreach(Animal animal in mAnimalManager.GetAnimals()) {
+                animalsListView.Items.Add(new ListViewItem(new string[] { animal.ID, animal.GetSpecies(), animal.Name, animal.age.ToString(), animal.Gender, animal.GetSpecialCharacteristics() }));
+            }
+        }
+
+
+        /*
+         * Updates the eating type and feeding schedule when the user selects an animal in the list.
+         */
         private void animalsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e) {
             Animal animal = mAnimalManager.GetAnimalWithId(e.Item.SubItems[0].Text);
             if( null != animal) {
@@ -132,7 +147,39 @@ namespace Assignment
             }
         }
 
+
+        /*
+         * Sorts the animals using different algorithems based on which column is clicked.
+         */
+        private void animalsListView_ColumnClick(object sender, ColumnClickEventArgs e) {
+            IComparer<Animal> comparer = null;
+
+            if (animalsListView.Columns[e.Column].Text.Equals("ID"))
+                comparer = new IdComparer();
+
+            if (animalsListView.Columns[e.Column].Text.Equals("Name"))
+                comparer = new NameComparer();
+
+            if (animalsListView.Columns[e.Column].Text.Equals("Species"))
+                comparer = new SpeciesComparer();
+
+            if (animalsListView.Columns[e.Column].Text.Equals("Age"))
+                comparer = new AgeComparer();
+
+            if (animalsListView.Columns[e.Column].Text.Equals("Gender"))
+                comparer = new GenderComparer();
+
+            if (animalsListView.Columns[e.Column].Text.Equals("Special characteristics"))
+                comparer = new SpecialCharacteristicsComparer();
+
+            if (null != comparer) {
+                mAnimalManager.Sort(comparer);
+                DisplayAnimals();
+            }
+        }
     }
+
+
 
 
 

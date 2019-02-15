@@ -28,7 +28,7 @@ namespace Assignment
          * Returns the animal at the given index in the list, or null if it doesn't exist.
          */
         public Animal GetAnimalAt(int index) {
-            return animals.Count < index ? animals[index] : null;
+            return index < animals.Count ? animals[index] : null;
         }
 
 
@@ -40,6 +40,9 @@ namespace Assignment
         }
 
 
+        /*
+         * Factory method which creates a concrete animal based on the given parameters.
+         */
         public Animal CreateAnimal(string speciesName, Dictionary<string, Object> attributes) {
             string id = string.Format("{0:P}-{1:000}", speciesName, animals.Count);
 
@@ -54,8 +57,82 @@ namespace Assignment
             return animal;
         }
 
+
+        /*
+         * Returns the entire animal list.
+         */
+        public List<Animal> GetAnimals() {
+            return animals;
+        }
+
+
+        /*
+         * Sorts the list using the supplied IComparer
+         */
+        public void Sort(IComparer<Animal> comparer) {
+            animals.Sort(comparer);
+        }
     }
 
 
+    /*
+     * Compares animal ages (ascending)
+     */
+    public class AgeComparer : IComparer<Animal> {
+        public int Compare(Animal x, Animal y) {
+            return x.age - y.age;
+        }
+    }
+
+
+    /*
+     * Compares animal names (ascending)
+     */
+    public class NameComparer : IComparer<Animal> {
+        public int Compare(Animal x, Animal y) {
+            return x.Name.CompareTo(y.Name);
+        }
+    }
+
+
+    /*
+     * Compares animal ID's (ascending)
+     */
+    public class IdComparer : IComparer<Animal> {
+        public int Compare(Animal x, Animal y) {
+            return x.ID.CompareTo(y.ID);
+        }
+    }
+
+
+    /*
+     * Compares animal genders (ascending)
+     */
+    public class GenderComparer : IComparer<Animal> {
+        public int Compare(Animal x, Animal y) {
+            return x.Gender.CompareTo(y.Gender);
+        }
+    }
+
+
+    /*
+     * Compares animal species (ascending)
+     */
+    public class SpeciesComparer : IComparer<Animal> {
+        public int Compare(Animal x, Animal y) {
+            return x.GetSpecies().CompareTo(y.GetSpecies());
+        }
+    }
+    
+
+
+    /*
+     * Compares animal characteristics (ascending)
+     */
+    public class SpecialCharacteristicsComparer : IComparer<Animal> {
+        public int Compare(Animal x, Animal y) {
+            return x.GetSpecialCharacteristics().CompareTo(y.GetSpecialCharacteristics());
+        }
+    }
 
 }
