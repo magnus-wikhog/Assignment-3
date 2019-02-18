@@ -1,51 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assignment.Animals;
+using Assignment.ListManager;
 
-
-namespace Assignment
-{
-
+namespace Assignment{
 
     /* 
      * This class manages our animals. It lets us add animals and retrieve them.
      */
-    public class AnimalManager {
-        private List<Animal> animals;
-
-        public AnimalManager() {
-            animals = new List<Animal>();
-        }
-
-        /*
-         * Adds the given animal to the list, and returns an AnimalNode which can be
-         * used to display the newly inserted animal in a NodeView.
-         */        
-        public void AddAnimal(Animal animal){
-            animals.Add(animal);
-        }
-
-        /*
-         * Returns the animal at the given index in the list, or null if it doesn't exist.
-         */
-        public Animal GetAnimalAt(int index) {
-            return index < animals.Count ? animals[index] : null;
-        }
+    public class AnimalManager : ListManager<Animal> {
 
 
-        /*
-         * Returns the animal with the given ID in the list, or null if it doesn't exist.
-         */
-        public Animal GetAnimalWithId(string id) {
-            return animals.Find((animal) => animal.ID.Equals(id)); 
-        }
 
-
-        /*
-         * Factory method which creates a concrete animal based on the given parameters.
-         */
+        /// <summary>
+        /// Factory method which creates a concrete animal based on the given parameters.
+        /// </summary>
+        /// <param name="speciesName">The name of the species</param>
+        /// <param name="attributes">Attributes specific to the species</param>
+        /// <returns></returns>
         public Animal CreateAnimal(string speciesName, Dictionary<string, Object> attributes) {
-            string id = string.Format("{0:P}-{1:000}", speciesName, animals.Count);
+            string id = string.Format("{0:P}-{1:000}", speciesName, Count);
 
             Animal animal = null;
             switch (speciesName) {
@@ -59,20 +33,8 @@ namespace Assignment
         }
 
 
-        /*
-         * Returns the entire animal list.
-         */
-        public List<Animal> GetAnimals() {
-            return animals;
-        }
 
 
-        /*
-         * Sorts the list using the supplied IComparer
-         */
-        public void Sort(IComparer<Animal> comparer) {
-            animals.Sort(comparer);
-        }
     }
 
 

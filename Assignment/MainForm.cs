@@ -9,13 +9,13 @@ namespace Assignment
 
 
 
-    public partial class Form1 : Form{
+    public partial class MainForm : Form{
         private AnimalManager mAnimalManager;
         private Dictionary<string, CategoryConfiguration> mCategoriesConfigurations;
         private Dictionary<string, SpeciesConfiguration> mSpeciesConfigurations;
 
 
-        public Form1(){
+        public MainForm(){
             InitializeComponent();
 
             // Our animal manager
@@ -118,7 +118,7 @@ namespace Assignment
             animal.age = (int)animalAgeUpDown.Value;
             animal.Gender = animalGenderListView.SelectedItem.ToString();
 
-            mAnimalManager.AddAnimal(animal);
+            mAnimalManager.Add(animal);
 
             // Add the animal to the list
             animalsListView.Items.Add(new ListViewItem( new string[]{ animal.ID, animal.GetSpecies(), animal.Name, animal.age.ToString(), animal.Gender, animal.GetSpecialCharacteristics() } ));
@@ -130,7 +130,8 @@ namespace Assignment
          */
         private void DisplayAnimals() {
             animalsListView.Items.Clear();
-            foreach(Animal animal in mAnimalManager.GetAnimals()) {
+            for (int i = 0; i < mAnimalManager.Count; i++) {
+                Animal animal = mAnimalManager.GetAt(i);
                 animalsListView.Items.Add(new ListViewItem(new string[] { animal.ID, animal.GetSpecies(), animal.Name, animal.age.ToString(), animal.Gender, animal.GetSpecialCharacteristics() }));
             }
         }
@@ -140,7 +141,7 @@ namespace Assignment
          * Updates the eating type and feeding schedule when the user selects an animal in the list.
          */
         private void animalsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e) {
-            Animal animal = mAnimalManager.GetAnimalWithId(e.Item.SubItems[0].Text);
+            Animal animal = mAnimalManager.GetAt(e.Item.Index);
             if( null != animal) {
                 eaterTypeTextBox.Text = animal.GetEaterType().ToString();
                 feedingScheduleTextBox.Text = animal.GetFoodSchedule().ToString();
