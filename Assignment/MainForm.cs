@@ -178,6 +178,13 @@ namespace Assignment
                 DisplayAnimals();
             }
         }
+
+        private void deleteAnimalButton_Click(object sender, EventArgs e) {
+            if (animalsListView.SelectedIndices.Count == 1) {
+                mAnimalManager.DeleteAt(animalsListView.SelectedIndices[0]);
+                DisplayAnimals();
+            }
+        }
     }
 
 

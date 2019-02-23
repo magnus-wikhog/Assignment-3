@@ -59,6 +59,7 @@
             this.mammalTeethCountUpDown = new System.Windows.Forms.NumericUpDown();
             this.animalGenderListView = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.deleteAnimalButton = new System.Windows.Forms.Button();
             this.animalsListView = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.species = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -424,14 +425,26 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.deleteAnimalButton);
             this.groupBox2.Controls.Add(this.animalsListView);
             this.groupBox2.Location = new System.Drawing.Point(12, 265);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox2.Size = new System.Drawing.Size(907, 231);
+            this.groupBox2.Size = new System.Drawing.Size(907, 261);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Animals";
+            // 
+            // deleteAnimalButton
+            // 
+            this.deleteAnimalButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deleteAnimalButton.Location = new System.Drawing.Point(10, 227);
+            this.deleteAnimalButton.Name = "deleteAnimalButton";
+            this.deleteAnimalButton.Size = new System.Drawing.Size(114, 26);
+            this.deleteAnimalButton.TabIndex = 5;
+            this.deleteAnimalButton.Text = "Delete animal";
+            this.deleteAnimalButton.UseVisualStyleBackColor = true;
+            this.deleteAnimalButton.Click += new System.EventHandler(this.deleteAnimalButton_Click);
             // 
             // animalsListView
             // 
@@ -447,6 +460,7 @@
             this.specialCharacteristics});
             this.animalsListView.FullRowSelect = true;
             this.animalsListView.Location = new System.Drawing.Point(10, 23);
+            this.animalsListView.MultiSelect = false;
             this.animalsListView.Name = "animalsListView";
             this.animalsListView.Size = new System.Drawing.Size(887, 198);
             this.animalsListView.TabIndex = 0;
@@ -534,17 +548,17 @@
             this.addAnimalButton.UseVisualStyleBackColor = true;
             this.addAnimalButton.Click += new System.EventHandler(this.addAnimalButton_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 503);
+            this.ClientSize = new System.Drawing.Size(930, 533);
             this.Controls.Add(this.addAnimalButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Animal Farm";
@@ -619,6 +633,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox animalGenderListView;
+        private System.Windows.Forms.Button deleteAnimalButton;
     }
 }
 
