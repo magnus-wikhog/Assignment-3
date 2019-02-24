@@ -56,11 +56,11 @@
     <Compile Include="Animal\IAnimal.cs" />
     <Compile Include="Animal\Species\Mammal.cs" />
     <Compile Include="Animal\Species\Swan.cs" />
-    <Compile Include="FoodForm.cs">
+    <Compile Include="RecipeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FoodForm.Designer.cs">
-      <DependentUpon>FoodForm.cs</DependentUpon>
+    <Compile Include="RecipeForm.Designer.cs">
+      <DependentUpon>RecipeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -93,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecipeForm.resx">
+      <DependentUpon>RecipeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

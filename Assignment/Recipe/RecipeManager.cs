@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Assignment.ListManager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Assignment.Recipe {
-    class RecipeManager {
+    class RecipeManager : ListManager<Recipe>{
     }
 }

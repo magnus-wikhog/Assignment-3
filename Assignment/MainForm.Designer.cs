@@ -71,6 +71,9 @@
             this.feedingScheduleTextBox = new System.Windows.Forms.TextBox();
             this.eaterTypeTextBox = new System.Windows.Forms.TextBox();
             this.addAnimalButton = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.addFoodButton = new System.Windows.Forms.Button();
+            this.foodListbox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.animalAgeUpDown)).BeginInit();
             this.birdInput.SuspendLayout();
@@ -86,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mammalTeethCountUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,7 +114,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(612, 217);
+            this.groupBox1.Size = new System.Drawing.Size(613, 217);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Animal specification";
@@ -510,6 +514,7 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Feeding schedule";
+            this.groupBox3.Visible = false;
             // 
             // feedingScheduleTextBox
             // 
@@ -548,11 +553,43 @@
             this.addAnimalButton.UseVisualStyleBackColor = true;
             this.addAnimalButton.Click += new System.EventHandler(this.addAnimalButton_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.addFoodButton);
+            this.groupBox4.Controls.Add(this.foodListbox);
+            this.groupBox4.Location = new System.Drawing.Point(630, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(288, 217);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Food details";
+            // 
+            // addFoodButton
+            // 
+            this.addFoodButton.Location = new System.Drawing.Point(12, 184);
+            this.addFoodButton.Name = "addFoodButton";
+            this.addFoodButton.Size = new System.Drawing.Size(75, 23);
+            this.addFoodButton.TabIndex = 1;
+            this.addFoodButton.Text = "Add food";
+            this.addFoodButton.UseVisualStyleBackColor = true;
+            this.addFoodButton.Click += new System.EventHandler(this.addFoodButton_Click);
+            // 
+            // foodListbox
+            // 
+            this.foodListbox.FormattingEnabled = true;
+            this.foodListbox.Location = new System.Drawing.Point(12, 17);
+            this.foodListbox.Name = "foodListbox";
+            this.foodListbox.Size = new System.Drawing.Size(264, 160);
+            this.foodListbox.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 533);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.addAnimalButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -585,6 +622,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -634,6 +672,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox animalGenderListView;
         private System.Windows.Forms.Button deleteAnimalButton;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button addFoodButton;
+        private System.Windows.Forms.ListBox foodListbox;
     }
 }
 

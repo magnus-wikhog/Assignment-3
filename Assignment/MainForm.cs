@@ -1,4 +1,5 @@
 ﻿using Assignment.Animals;
+using Assignment.Recipe;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace Assignment
 
     public partial class MainForm : Form{
         private AnimalManager mAnimalManager;
+        private RecipeManager mRecipeManager;
         private Dictionary<string, CategoryConfiguration> mCategoriesConfigurations;
         private Dictionary<string, SpeciesConfiguration> mSpeciesConfigurations;
 
@@ -18,8 +20,9 @@ namespace Assignment
         public MainForm(){
             InitializeComponent();
 
-            // Our animal manager
+            // Initialize list managers
             mAnimalManager = new AnimalManager();
+            mRecipeManager = new RecipeManager();
 
 
 
@@ -179,11 +182,36 @@ namespace Assignment
             }
         }
 
+
+        /*
+         * Delete an animal when the Delete button is clicked
+         */
         private void deleteAnimalButton_Click(object sender, EventArgs e) {
             if (animalsListView.SelectedIndices.Count == 1) {
                 mAnimalManager.DeleteAt(animalsListView.SelectedIndices[0]);
                 DisplayAnimals();
             }
+        }
+
+
+        /*
+         * Brings up the RecipeForm where the user can create a new recipe which will be added to the RecipeManager.
+         */
+        private void addFoodButton_Click(object sender, EventArgs e) {
+            RecipeForm recipeForm = new RecipeForm();
+            if( recipeForm.ShowDialog() == DialogResult.OK) {
+                mRecipeManager.Add(recipeForm.Recipe);
+                DisplayRecipes();
+            }
+        }
+
+
+        /*
+          * Reloads all recipes from the RecipeManager and displays them in the list.
+          */
+        private void DisplayRecipes() {
+            foodListbox.Items.Clear();
+            foodListbox.Items.AddRange(mRecipeManager.ToStringArray());
         }
     }
 
