@@ -67,13 +67,17 @@
             this.age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.specialCharacteristics = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.addAnimalButton = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.foodPage = new System.Windows.Forms.TabPage();
+            this.foodListbox = new System.Windows.Forms.ListBox();
+            this.addFoodButton = new System.Windows.Forms.Button();
+            this.staffPage = new System.Windows.Forms.TabPage();
+            this.staffListbox = new System.Windows.Forms.ListBox();
+            this.addStaffButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.feedingScheduleTextBox = new System.Windows.Forms.TextBox();
             this.eaterTypeTextBox = new System.Windows.Forms.TextBox();
-            this.addAnimalButton = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.addFoodButton = new System.Windows.Forms.Button();
-            this.foodListbox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.animalAgeUpDown)).BeginInit();
             this.birdInput.SuspendLayout();
@@ -88,8 +92,10 @@
             this.mammalInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mammalTeethCountUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.foodPage.SuspendLayout();
+            this.staffPage.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -429,6 +435,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.deleteAnimalButton);
             this.groupBox2.Controls.Add(this.animalsListView);
             this.groupBox2.Location = new System.Drawing.Point(12, 265);
@@ -466,7 +473,7 @@
             this.animalsListView.Location = new System.Drawing.Point(10, 23);
             this.animalsListView.MultiSelect = false;
             this.animalsListView.Name = "animalsListView";
-            this.animalsListView.Size = new System.Drawing.Size(887, 198);
+            this.animalsListView.Size = new System.Drawing.Size(593, 198);
             this.animalsListView.TabIndex = 0;
             this.animalsListView.UseCompatibleStateImageBehavior = false;
             this.animalsListView.View = System.Windows.Forms.View.Details;
@@ -502,19 +509,99 @@
             this.specialCharacteristics.Text = "Special characteristics";
             this.specialCharacteristics.Width = 539;
             // 
+            // addAnimalButton
+            // 
+            this.addAnimalButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addAnimalButton.Location = new System.Drawing.Point(408, 238);
+            this.addAnimalButton.Name = "addAnimalButton";
+            this.addAnimalButton.Size = new System.Drawing.Size(114, 26);
+            this.addAnimalButton.TabIndex = 4;
+            this.addAnimalButton.Text = "Add animal";
+            this.addAnimalButton.UseVisualStyleBackColor = true;
+            this.addAnimalButton.Click += new System.EventHandler(this.addAnimalButton_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.foodPage);
+            this.tabControl1.Controls.Add(this.staffPage);
+            this.tabControl1.Location = new System.Drawing.Point(631, 14);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(287, 216);
+            this.tabControl1.TabIndex = 8;
+            // 
+            // foodPage
+            // 
+            this.foodPage.BackColor = System.Drawing.SystemColors.Control;
+            this.foodPage.Controls.Add(this.foodListbox);
+            this.foodPage.Controls.Add(this.addFoodButton);
+            this.foodPage.Location = new System.Drawing.Point(4, 22);
+            this.foodPage.Name = "foodPage";
+            this.foodPage.Padding = new System.Windows.Forms.Padding(3);
+            this.foodPage.Size = new System.Drawing.Size(279, 190);
+            this.foodPage.TabIndex = 0;
+            this.foodPage.Text = "Food";
+            // 
+            // foodListbox
+            // 
+            this.foodListbox.FormattingEnabled = true;
+            this.foodListbox.Location = new System.Drawing.Point(7, 9);
+            this.foodListbox.Name = "foodListbox";
+            this.foodListbox.Size = new System.Drawing.Size(264, 134);
+            this.foodListbox.TabIndex = 5;
+            // 
+            // addFoodButton
+            // 
+            this.addFoodButton.Location = new System.Drawing.Point(7, 154);
+            this.addFoodButton.Name = "addFoodButton";
+            this.addFoodButton.Size = new System.Drawing.Size(75, 26);
+            this.addFoodButton.TabIndex = 4;
+            this.addFoodButton.Text = "Add food";
+            this.addFoodButton.UseVisualStyleBackColor = true;
+            this.addFoodButton.Click += new System.EventHandler(this.addFoodButton_Click);
+            // 
+            // staffPage
+            // 
+            this.staffPage.BackColor = System.Drawing.SystemColors.Control;
+            this.staffPage.Controls.Add(this.staffListbox);
+            this.staffPage.Controls.Add(this.addStaffButton);
+            this.staffPage.Location = new System.Drawing.Point(4, 22);
+            this.staffPage.Name = "staffPage";
+            this.staffPage.Padding = new System.Windows.Forms.Padding(3);
+            this.staffPage.Size = new System.Drawing.Size(279, 190);
+            this.staffPage.TabIndex = 1;
+            this.staffPage.Text = "Staff";
+            // 
+            // staffListbox
+            // 
+            this.staffListbox.FormattingEnabled = true;
+            this.staffListbox.Location = new System.Drawing.Point(7, 10);
+            this.staffListbox.Name = "staffListbox";
+            this.staffListbox.Size = new System.Drawing.Size(264, 134);
+            this.staffListbox.TabIndex = 7;
+            // 
+            // addStaffButton
+            // 
+            this.addStaffButton.Location = new System.Drawing.Point(7, 155);
+            this.addStaffButton.Name = "addStaffButton";
+            this.addStaffButton.Size = new System.Drawing.Size(75, 26);
+            this.addStaffButton.TabIndex = 6;
+            this.addStaffButton.Text = "Add staff";
+            this.addStaffButton.UseVisualStyleBackColor = true;
+            this.addStaffButton.Click += new System.EventHandler(this.addStaffButton_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.feedingScheduleTextBox);
             this.groupBox3.Controls.Add(this.eaterTypeTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(631, 13);
+            this.groupBox3.Location = new System.Drawing.Point(609, 23);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(288, 217);
-            this.groupBox3.TabIndex = 3;
+            this.groupBox3.Size = new System.Drawing.Size(288, 198);
+            this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Feeding schedule";
-            this.groupBox3.Visible = false;
             // 
             // feedingScheduleTextBox
             // 
@@ -527,7 +614,7 @@
             this.feedingScheduleTextBox.Location = new System.Drawing.Point(6, 46);
             this.feedingScheduleTextBox.Multiline = true;
             this.feedingScheduleTextBox.Name = "feedingScheduleTextBox";
-            this.feedingScheduleTextBox.Size = new System.Drawing.Size(276, 164);
+            this.feedingScheduleTextBox.Size = new System.Drawing.Size(276, 145);
             this.feedingScheduleTextBox.TabIndex = 1;
             // 
             // eaterTypeTextBox
@@ -542,56 +629,13 @@
             this.eaterTypeTextBox.Size = new System.Drawing.Size(276, 20);
             this.eaterTypeTextBox.TabIndex = 0;
             // 
-            // addAnimalButton
-            // 
-            this.addAnimalButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addAnimalButton.Location = new System.Drawing.Point(408, 238);
-            this.addAnimalButton.Name = "addAnimalButton";
-            this.addAnimalButton.Size = new System.Drawing.Size(114, 26);
-            this.addAnimalButton.TabIndex = 4;
-            this.addAnimalButton.Text = "Add animal";
-            this.addAnimalButton.UseVisualStyleBackColor = true;
-            this.addAnimalButton.Click += new System.EventHandler(this.addAnimalButton_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.addFoodButton);
-            this.groupBox4.Controls.Add(this.foodListbox);
-            this.groupBox4.Location = new System.Drawing.Point(630, 13);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(288, 217);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Food details";
-            // 
-            // addFoodButton
-            // 
-            this.addFoodButton.Location = new System.Drawing.Point(12, 184);
-            this.addFoodButton.Name = "addFoodButton";
-            this.addFoodButton.Size = new System.Drawing.Size(75, 23);
-            this.addFoodButton.TabIndex = 1;
-            this.addFoodButton.Text = "Add food";
-            this.addFoodButton.UseVisualStyleBackColor = true;
-            this.addFoodButton.Click += new System.EventHandler(this.addFoodButton_Click);
-            // 
-            // foodListbox
-            // 
-            this.foodListbox.FormattingEnabled = true;
-            this.foodListbox.Location = new System.Drawing.Point(12, 17);
-            this.foodListbox.Name = "foodListbox";
-            this.foodListbox.Size = new System.Drawing.Size(264, 160);
-            this.foodListbox.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 533);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.addAnimalButton);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -620,9 +664,11 @@
             this.mammalInput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mammalTeethCountUpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.foodPage.ResumeLayout(false);
+            this.staffPage.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -664,17 +710,21 @@
         private System.Windows.Forms.ColumnHeader age;
         private System.Windows.Forms.ColumnHeader gender;
         private System.Windows.Forms.ColumnHeader specialCharacteristics;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button addAnimalButton;
-        private System.Windows.Forms.TextBox eaterTypeTextBox;
-        private System.Windows.Forms.TextBox feedingScheduleTextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox animalGenderListView;
         private System.Windows.Forms.Button deleteAnimalButton;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button addFoodButton;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage foodPage;
         private System.Windows.Forms.ListBox foodListbox;
+        private System.Windows.Forms.Button addFoodButton;
+        private System.Windows.Forms.TabPage staffPage;
+        private System.Windows.Forms.ListBox staffListbox;
+        private System.Windows.Forms.Button addStaffButton;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox feedingScheduleTextBox;
+        private System.Windows.Forms.TextBox eaterTypeTextBox;
     }
 }
 

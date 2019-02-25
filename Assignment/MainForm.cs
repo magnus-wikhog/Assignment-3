@@ -1,5 +1,6 @@
 ﻿using Assignment.Animals;
 using Assignment.Recipe;
+using Assignment.Staff;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Assignment
     public partial class MainForm : Form{
         private AnimalManager mAnimalManager;
         private RecipeManager mRecipeManager;
+        private StaffManager mStaffManager;
         private Dictionary<string, CategoryConfiguration> mCategoriesConfigurations;
         private Dictionary<string, SpeciesConfiguration> mSpeciesConfigurations;
 
@@ -23,6 +25,7 @@ namespace Assignment
             // Initialize list managers
             mAnimalManager = new AnimalManager();
             mRecipeManager = new RecipeManager();
+            mStaffManager = new StaffManager();
 
 
 
@@ -213,6 +216,30 @@ namespace Assignment
             foodListbox.Items.Clear();
             foodListbox.Items.AddRange(mRecipeManager.ToStringArray());
         }
+
+
+
+
+        /*
+         * Brings up the StaffForm where the user can register staffs qualifications.
+         */
+        private void addStaffButton_Click(object sender, EventArgs e) {
+            StaffForm staffForm = new StaffForm();
+            if (staffForm.ShowDialog() == DialogResult.OK) {
+                mStaffManager.Add(staffForm.Staff);
+                DisplayStaff();
+            }
+        }
+
+        /*
+          * Reloads all staff from the StaffManager and displays them in the list.
+          */
+        private void DisplayStaff() {
+            staffListbox.Items.Clear();
+            staffListbox.Items.AddRange(mStaffManager.ToStringArray());
+        }
+
+
     }
 
 

@@ -8,7 +8,7 @@ namespace Assignment.ListManager {
 
     /// <summary>Genereic interface for a class that manages a list of objects of type T.</summary>
     /// <typeparam name="T">The type of objects handled by the list manager.</typeparam>
-    interface IListManager<T> {
+    public interface IListManager<T> {
         /// <summary>
         /// Returns the number of items in the list.
         /// </summary>
