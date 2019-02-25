@@ -20,8 +20,10 @@ namespace Assignment {
         }
 
         private void addButton_Click(object sender, EventArgs e) {
-            ingredientsListbox.Items.Add(ingredientTextbox.Text);
-            ingredientTextbox.Clear();
+            if (ingredientTextbox.Text.Length > 0) {
+                ingredientsListbox.Items.Add(ingredientTextbox.Text);
+                ingredientTextbox.Clear();
+            }
         }
 
         private void changeButton_Click(object sender, EventArgs e) {
@@ -42,13 +44,17 @@ namespace Assignment {
         }
 
         private void okButton_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.OK;
-            Recipe = new Recipe.Recipe {
-                Name = nameTextbox.Text
-            };
+            if (nameTextbox.Text.Length > 0 && ingredientsListbox.Items.Count > 0) {
+                DialogResult = DialogResult.OK;
+                Recipe = new Recipe.Recipe {
+                    Name = nameTextbox.Text
+                };
 
-            foreach (string ingredient in ingredientsListbox.Items)
-                Recipe.Ingredients.Add(ingredient);
+                foreach (string ingredient in ingredientsListbox.Items)
+                    Recipe.Ingredients.Add(ingredient);
+            }
+            else
+                DialogResult = DialogResult.Cancel;
 
             Close();
         }

@@ -148,7 +148,9 @@
             this.Controls.Add(this.nameTextbox);
             this.Controls.Add(this.label1);
             this.Name = "StaffForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff";
+            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

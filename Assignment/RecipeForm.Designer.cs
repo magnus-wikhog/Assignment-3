@@ -148,7 +148,9 @@
             this.Controls.Add(this.nameTextbox);
             this.Controls.Add(this.label1);
             this.Name = "RecipeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recipe";
+            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

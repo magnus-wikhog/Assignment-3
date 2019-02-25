@@ -20,8 +20,10 @@ namespace Assignment {
         }
 
         private void addButton_Click(object sender, EventArgs e) {
-            qualificationsListbox.Items.Add(qualificationTextbox.Text);
-            qualificationTextbox.Clear();
+            if (qualificationTextbox.Text.Length > 0) {
+                qualificationsListbox.Items.Add(qualificationTextbox.Text);
+                qualificationTextbox.Clear();
+            }
         }
 
         private void changeButton_Click(object sender, EventArgs e) {
@@ -42,13 +44,17 @@ namespace Assignment {
         }
 
         private void okButton_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.OK;
-            Staff = new Staff.Staff {
-                Name = nameTextbox.Text
-            };
+            if (nameTextbox.Text.Length > 0 && qualificationsListbox.Items.Count > 0) {
+                DialogResult = DialogResult.OK;
+                Staff = new Staff.Staff {
+                    Name = nameTextbox.Text
+                };
 
-            foreach (string ingredient in qualificationsListbox.Items)
-                Staff.Qualifications.Add(ingredient);
+                foreach (string ingredient in qualificationsListbox.Items)
+                    Staff.Qualifications.Add(ingredient);
+            }
+            else
+                DialogResult = DialogResult.Cancel;
 
             Close();
         }

@@ -532,7 +532,7 @@
             // 
             // foodPage
             // 
-            this.foodPage.BackColor = System.Drawing.SystemColors.Control;
+            this.foodPage.BackColor = System.Drawing.SystemColors.Window;
             this.foodPage.Controls.Add(this.foodListbox);
             this.foodPage.Controls.Add(this.addFoodButton);
             this.foodPage.Location = new System.Drawing.Point(4, 22);
@@ -545,14 +545,14 @@
             // foodListbox
             // 
             this.foodListbox.FormattingEnabled = true;
-            this.foodListbox.Location = new System.Drawing.Point(7, 9);
+            this.foodListbox.Location = new System.Drawing.Point(7, 10);
             this.foodListbox.Name = "foodListbox";
             this.foodListbox.Size = new System.Drawing.Size(264, 134);
             this.foodListbox.TabIndex = 5;
             // 
             // addFoodButton
             // 
-            this.addFoodButton.Location = new System.Drawing.Point(7, 154);
+            this.addFoodButton.Location = new System.Drawing.Point(7, 155);
             this.addFoodButton.Name = "addFoodButton";
             this.addFoodButton.Size = new System.Drawing.Size(75, 26);
             this.addFoodButton.TabIndex = 4;
@@ -562,7 +562,7 @@
             // 
             // staffPage
             // 
-            this.staffPage.BackColor = System.Drawing.SystemColors.Control;
+            this.staffPage.BackColor = System.Drawing.SystemColors.Window;
             this.staffPage.Controls.Add(this.staffListbox);
             this.staffPage.Controls.Add(this.addStaffButton);
             this.staffPage.Location = new System.Drawing.Point(4, 22);
