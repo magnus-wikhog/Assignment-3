@@ -1,22 +1,46 @@
-﻿using System.Collections.Generic;
+﻿/* 
+ * Magnus Wikhög
+ * Assignment 3
+ * 2019-02-27
+ * 
+ */
+using System.Collections.Generic;
 
 namespace Assignment.Animals
 {
+    /// <summary>
+    /// This is a class. It's called Swan. It is used to represent swans, which are a
+    /// type of birds.
+    /// </summary>
     public class Swan : Bird{
         public string color;
 
-        public Swan(string id, double wingSpanCm, string color) : base(id, wingSpanCm) {
+        /// <summary>
+        /// A constructor. Use it to construct a swan.
+        /// </summary>
+        /// <param name="wingSpanCm"></param>
+        /// <param name="color"></param>
+        public Swan(double wingSpanCm, string color) : base(wingSpanCm) {
             this.color = color;
         }
 
-
+        /// <summary>
+        /// Returns the EaterType of this class.
+        /// </summary>
         public override EaterType GetEaterType() => EaterType.Herbivore;
 
+        /// <summary>
+        /// Returns the FoodSchedule of this class.
+        /// </summary>
         public override FoodSchedule GetFoodSchedule() => new FoodSchedule(new List<string>(){
             Name+" likes to eat seaweeds.",
             "Will also eat bread crumbs from time to time."
         });
 
+
+        /// <summary>
+        /// Returns "Swan", since this is the Swan class.
+        /// </summary>
         public override string GetSpecies() => "Swan";
 
 

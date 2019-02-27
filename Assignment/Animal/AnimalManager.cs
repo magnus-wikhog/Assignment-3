@@ -1,39 +1,25 @@
-﻿using System;
+﻿/* 
+ * Magnus Wikhög
+ * Assignment 3
+ * 2019-02-27
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using Assignment.Animals;
 using Assignment.ListManager;
 
-namespace Assignment{
+namespace Assignment.Animals{
 
     /* 
      * This class manages our animals. It lets us add animals and retrieve them.
      */
     public class AnimalManager : ListManager<Animal> {
 
-
-
-        /// <summary>
-        /// Factory method which creates a concrete animal based on the given parameters.
-        /// </summary>
-        /// <param name="speciesName">The name of the species</param>
-        /// <param name="attributes">Attributes specific to the species</param>
-        /// <returns></returns>
-        public Animal CreateAnimal(string speciesName, Dictionary<string, Object> attributes) {
-            string id = string.Format("{0:P}-{1:000}", speciesName, Count);
-
-            Animal animal = null;
-            switch (speciesName) {
-                case "Cat":  animal = new Cat(id, (int)attributes["mammalTeethCount"], (double)attributes["catClawLength"]); break;
-                case "Dog":  animal = new Dog(id, (int)attributes["mammalTeethCount"], (double)attributes["dogTailLength"]); break;
-                case "Swan": animal = new Swan(id, (double)attributes["birdWingSpan"], (string)attributes["swanColor"]); break;
-                case "Crow": animal = new Crow(id, (double)attributes["birdWingSpan"], (double)attributes["crowWeight"]); break;
-            }
-
-            return animal;
+        public void AddAnimal(Animal animal) {
+            animal.ID = string.Format("{0:P}-{1:000}", animal.GetSpecies(), Count);
+            Add(animal);
         }
-
-
-
 
     }
 

@@ -1,5 +1,5 @@
 ﻿namespace Assignment {
-    partial class RecipeForm {
+    partial class StaffOrFoodForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,15 +25,15 @@
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
             this.nameTextbox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ingredientTextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ingredientsListbox = new System.Windows.Forms.ListBox();
+            this.listboxGroup = new System.Windows.Forms.GroupBox();
+            this.addToListTextbox = new System.Windows.Forms.TextBox();
+            this.addToListboxLabel = new System.Windows.Forms.Label();
+            this.listbox = new System.Windows.Forms.ListBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.changeButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.listboxGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -51,52 +51,50 @@
             this.nameTextbox.Name = "nameTextbox";
             this.nameTextbox.Size = new System.Drawing.Size(295, 20);
             this.nameTextbox.TabIndex = 1;
-            this.nameTextbox.TextChanged += new System.EventHandler(this.nameTextbox_TextChanged);
             // 
-            // groupBox1
+            // listboxGroup
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.listboxGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.ingredientTextbox);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.ingredientsListbox);
-            this.groupBox1.Controls.Add(this.deleteButton);
-            this.groupBox1.Controls.Add(this.changeButton);
-            this.groupBox1.Controls.Add(this.addButton);
-            this.groupBox1.Location = new System.Drawing.Point(15, 51);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(352, 208);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ingredients";
+            this.listboxGroup.Controls.Add(this.addToListTextbox);
+            this.listboxGroup.Controls.Add(this.addToListboxLabel);
+            this.listboxGroup.Controls.Add(this.listbox);
+            this.listboxGroup.Controls.Add(this.deleteButton);
+            this.listboxGroup.Controls.Add(this.changeButton);
+            this.listboxGroup.Controls.Add(this.addButton);
+            this.listboxGroup.Location = new System.Drawing.Point(15, 51);
+            this.listboxGroup.Name = "listboxGroup";
+            this.listboxGroup.Size = new System.Drawing.Size(352, 208);
+            this.listboxGroup.TabIndex = 2;
+            this.listboxGroup.TabStop = false;
+            this.listboxGroup.Text = "Qualifications";
             // 
-            // ingredientTextbox
+            // addToListTextbox
             // 
-            this.ingredientTextbox.Location = new System.Drawing.Point(75, 19);
-            this.ingredientTextbox.Name = "ingredientTextbox";
-            this.ingredientTextbox.Size = new System.Drawing.Size(262, 20);
-            this.ingredientTextbox.TabIndex = 5;
+            this.addToListTextbox.Location = new System.Drawing.Point(86, 19);
+            this.addToListTextbox.Name = "addToListTextbox";
+            this.addToListTextbox.Size = new System.Drawing.Size(251, 20);
+            this.addToListTextbox.TabIndex = 5;
             // 
-            // label2
+            // addToListboxLabel
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ingredient";
+            this.addToListboxLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addToListboxLabel.AutoSize = true;
+            this.addToListboxLabel.Location = new System.Drawing.Point(15, 22);
+            this.addToListboxLabel.Name = "addToListboxLabel";
+            this.addToListboxLabel.Size = new System.Drawing.Size(65, 13);
+            this.addToListboxLabel.TabIndex = 4;
+            this.addToListboxLabel.Text = "Qualification";
             // 
-            // ingredientsListbox
+            // listbox
             // 
-            this.ingredientsListbox.FormattingEnabled = true;
-            this.ingredientsListbox.Location = new System.Drawing.Point(111, 59);
-            this.ingredientsListbox.Name = "ingredientsListbox";
-            this.ingredientsListbox.Size = new System.Drawing.Size(226, 134);
-            this.ingredientsListbox.TabIndex = 3;
-            this.ingredientsListbox.SelectedIndexChanged += new System.EventHandler(this.ingredientsListbox_SelectedIndexChanged);
-            this.ingredientsListbox.SelectedValueChanged += new System.EventHandler(this.ingredientsListbox_SelectedValueChanged);
+            this.listbox.FormattingEnabled = true;
+            this.listbox.Location = new System.Drawing.Point(111, 59);
+            this.listbox.Name = "listbox";
+            this.listbox.Size = new System.Drawing.Size(226, 134);
+            this.listbox.TabIndex = 3;
+            this.listbox.SelectedIndexChanged += new System.EventHandler(this.ingredientsListbox_SelectedIndexChanged);
             // 
             // deleteButton
             // 
@@ -138,21 +136,21 @@
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // RecipeForm
+            // StaffOrFoodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 296);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.listboxGroup);
             this.Controls.Add(this.nameTextbox);
             this.Controls.Add(this.label1);
-            this.Name = "RecipeForm";
+            this.Name = "StaffOrFoodForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Recipe";
+            this.Text = "Staff";
             this.TopMost = true;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.listboxGroup.ResumeLayout(false);
+            this.listboxGroup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,13 +160,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nameTextbox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox listboxGroup;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button changeButton;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.TextBox ingredientTextbox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox ingredientsListbox;
+        private System.Windows.Forms.TextBox addToListTextbox;
+        private System.Windows.Forms.Label addToListboxLabel;
+        private System.Windows.Forms.ListBox listbox;
         private System.Windows.Forms.Button okButton;
     }
 }

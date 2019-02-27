@@ -1,4 +1,10 @@
-﻿namespace Assignment.Animals
+﻿/* 
+ * Magnus Wikhög
+ * Assignment 3
+ * 2019-02-27
+ * 
+ */
+namespace Assignment.Animals
 {
 
     /*
@@ -14,7 +20,7 @@
 
 
         // Public properties common to all animals
-        public string ID => id;
+        public string ID { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Gender { get => gender; set => gender = value; }
         public int age;
@@ -25,10 +31,10 @@
         protected string gender;
 
 
-
-        public Animal(string id){
-            this.id = id;
-        }
+        /// <summary>
+        /// The constructor for the Animal class.
+        /// </summary>
+        public Animal() { }
 
 
 

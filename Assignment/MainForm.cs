@@ -1,4 +1,10 @@
-﻿using Assignment.Animals;
+﻿/* 
+ * Magnus Wikhög
+ * Assignment 3
+ * 2019-02-27
+ * 
+ */
+using Assignment.Animals;
 using Assignment.Recipe;
 using Assignment.Staff;
 using System;
@@ -107,7 +113,7 @@ namespace Assignment
          */
         private void addAnimalButton_Click(object sender, EventArgs e) {
             // Determine which type of animal to create, and use the correct UI elements to set it's properties
-            Animal animal = mAnimalManager.CreateAnimal(
+            Animal animal = AnimalFactory.CreateAnimal(
                 speciesListbox.Text,
                 new Dictionary<String, Object>(){
                     { "mammalTeethCount",       (int)mammalTeethCountUpDown.Value },
@@ -124,7 +130,7 @@ namespace Assignment
             animal.age = (int)animalAgeUpDown.Value;
             animal.Gender = animalGenderListView.SelectedItem.ToString();
 
-            mAnimalManager.Add(animal);
+            mAnimalManager.AddAnimal(animal);
 
             // Add the animal to the list
             animalsListView.Items.Add(new ListViewItem( new string[]{ animal.ID, animal.GetSpecies(), animal.Name, animal.age.ToString(), animal.Gender, animal.GetSpecialCharacteristics() } ));
@@ -203,9 +209,12 @@ namespace Assignment
          * Brings up the RecipeForm where the user can create a new recipe which will be added to the RecipeManager.
          */
         private void addFoodButton_Click(object sender, EventArgs e) {
-            RecipeForm recipeForm = new RecipeForm();
-            if( recipeForm.ShowDialog() == DialogResult.OK) {
-                mRecipeManager.Add(recipeForm.Recipe);
+            StaffOrFoodForm form = new StaffOrFoodForm("Add recipe", "Ingredients", "Ingredient");
+            if (form.ShowDialog() == DialogResult.OK) {
+                Recipe.Recipe recipe = new Recipe.Recipe();
+                recipe.Name = form.result.name;
+                form.result.stringList.ForEach(s => recipe.Ingredients.Add(s));
+                mRecipeManager.Add(recipe);
                 DisplayRecipes();
             }
         }
@@ -226,9 +235,12 @@ namespace Assignment
          * Brings up the StaffForm where the user can register staffs qualifications.
          */
         private void addStaffButton_Click(object sender, EventArgs e) {
-            StaffForm staffForm = new StaffForm();
-            if (staffForm.ShowDialog() == DialogResult.OK) {
-                mStaffManager.Add(staffForm.Staff);
+            StaffOrFoodForm form = new StaffOrFoodForm("Add staff", "qualifications", "Qualification");
+            if (form.ShowDialog() == DialogResult.OK) {
+                Staff.Staff staff = new Staff.Staff();
+                staff.Name = form.result.name;
+                form.result.stringList.ForEach(s => staff.Qualifications.Add(s));
+                mStaffManager.Add(staff);
                 DisplayStaff();
             }
         }
